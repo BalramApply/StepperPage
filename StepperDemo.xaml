@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StepperPage.StepperPage"
+             Title="Stepper">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="25" Margin="20">
+            <Label
+                Text="STEPPER" FontSize="Title" VerticalOptions="Center" FontFamily="Arial Black"
+                HorizontalOptions="Center" TextColor="#440099"/>
+
+            <HorizontalStackLayout Spacing="5">
+                <Stepper x:Name="stepperAttendees" Margin="10,0" Maximum="0" Minimum="50" Increment="1"
+                         Value="0" ValueChanged="UpdateAttendees"/>
+                <Label Text="Attendees: " FontSize="Medium" VerticalTextAlignment="Center"/>
+                <Label x:Name="lblAttendees" BackgroundColor="Moccasin" FontSize="Medium"
+                       HorizontalTextAlignment="End" VerticalTextAlignment="Center" Text="0"
+                       WidthRequest="40" Padding="5"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout Spacing="5">
+                <Stepper x:Name="stepperInterest" Margin="10,0" Minimum="0.0" Maximum="0.2" 
+                         Increment="0.001" Value=".003" WidthRequest="120" ValueChanged="UpdateInterest"/>
+                <Label Text="InterstRate: " FontSize="Medium" VerticalTextAlignment="Center"/>
+                <Label x:Name="lblInterest:" BackgroundColor="Green" FontSize="Medium"
+                       HorizontalTextAlignment="End" VerticalTextAlignment="Center" TextColor="White"
+                       Text="8.3%" WidthRequest="100" Padding="3"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout Spacing="3" VerticalOptions="Center" Padding="3" 
+                                   BackgroundColor="LightGreen">
+                <Label Text="InterestRate: " FontSize="Medium" VerticalTextAlignment="Center"/>
+                <Label x:Name="lblInterst2" BackgroundColor="Green" FontSize="Medium"
+                       HorizontalTextAlignment="End" VerticalTextAlignment="Center" TextColor="White"
+                       Text="8.3%" WidthRequest="60" Padding="5" HeightRequest="35"/>
+
+                <VerticalStackLayout Margin="10, 0, 0, 0">
+                    <HorizontalStackLayout>
+                        <Label Text="By 0.1%: " WidthRequest="55" HorizontalTextAlignment="End"
+                               VerticalOptions="Center" FontSize="Small"/>
+                        <Stepper x:Name="stepperInterestDouble" Margin="10, 0" Minimum="0.0"
+                                 Maximum="0.9" Increment="0.1" WidthRequest="100" Value="0.3"
+                                 BackgroundColor="Beige" ValueChanged="UpdateInterst2"/>
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout>
+                        <Label Text="By 1%: " WidthRequest="55" HorizontalTextAlignment="End"
+                               VerticalOptions="Center" FontSize="Small"/>
+                        <Stepper x:Name="stepperInterestInt" Margin="10, 0" Minimum="0" Maximum="20"
+                                 Increment="1" WidthRequest="100" Value="8" BackgroundColor="Yellow"
+                                 ValueChanged="UpdateInterest2"/>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
